@@ -1,0 +1,30 @@
+{
+"type": "FeatureCollection",
+"name": "Osmaronia cerasiformis",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.147921040300005, 49.708222097 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.168325, 49.705285 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.159034, 49.714879 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.180052, 49.69831 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.158683, 49.713477 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.160432, 49.713641 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.155302833299999, 49.7299616667 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.1644445, 49.71028667 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.157550106100004, 49.707772432399999 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.1588055, 49.714041666699998 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.164065, 49.710965 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.161322222199999, 49.715416666700001 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.158683333300004, 49.689341666700003 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -122.9496, 50.1135305 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.102766666700006, 49.73736945 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.158219444400004, 49.7119138889 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.159888888899999, 49.714816666700003 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.152153015099998, 49.713569641100001 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.167913888900003, 49.719933333299998 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.156036661900004, 49.729691413600001 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.135688833299994, 49.6984666667 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.1585609, 49.7137049 ] } },
+{ "type": "Feature", "properties": { "description": 0 }, "geometry": { "type": "Point", "coordinates": [ -123.163496945199995, 49.716630354599999 ] } }
+]
+}

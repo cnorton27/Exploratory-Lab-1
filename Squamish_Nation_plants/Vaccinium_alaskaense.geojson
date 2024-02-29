@@ -1,0 +1,23 @@
+{
+"type": "FeatureCollection",
+"name": "Vaccinium alaskaense",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.10524, 49.683979 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.120518, 49.674249 ] } },
+{ "type": "Feature", "properties": { "description": "Deeks Lake Hike" }, "geometry": { "type": "Point", "coordinates": [ -123.212509, 49.516204 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.275834231399998, 49.686381091 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.1052945, 49.704491666700001 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.118262481599999, 49.690435374499998 ] } },
+{ "type": "Feature", "properties": { "description": "to show the widely spaced 'whiskers' along the underside of the midvein that proves this is Vaccinium alaskaense (leaf folded along the vein)" }, "geometry": { "type": "Point", "coordinates": [ -123.125958333300005, 49.671711666699998 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.127954155200001, 50.135494071300002 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.3803347, 50.150521599699999 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -122.4841083333, 50.340255 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.101202231399995, 50.059712056899997 ] } },
+{ "type": "Feature", "properties": { "description": "adjacent to forest, however out in the open on a log above bogbean at edge of a lake" }, "geometry": { "type": "Point", "coordinates": [ -123.124225, 49.790396666699998 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.006775, 50.086372166700002 ] } },
+{ "type": "Feature", "properties": { "description": "scattered tiny hairs still visible along leaf underside midveins; plant starting to get fall colouring" }, "geometry": { "type": "Point", "coordinates": [ -123.124126666699993, 49.673388333299997 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.120428333299998, 49.67459 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.130745224099996, 49.688831453100001 ] } }
+]
+}

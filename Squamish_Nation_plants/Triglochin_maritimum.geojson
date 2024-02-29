@@ -1,0 +1,33 @@
+{
+"type": "FeatureCollection",
+"name": "Triglochin maritimum",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "description": "Family: Juncaginaceae Squamish habitat: Estuary, wet tidal marsh Squamish location: East Delta near restored old log sort" }, "geometry": { "type": "Point", "coordinates": [ -123.16987, 49.701169 ] } },
+{ "type": "Feature", "properties": { "description": "Family: Juncaginaceae Phenological Phase: forming fruit Habitat: Estuary, tidally influenced wet meadow Notes: Associated Species: Pacific Silverweed (Potentilla anserina pacifica)" }, "geometry": { "type": "Point", "coordinates": [ -123.176427093599997, 49.694311104 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.178796013899998, 49.695596764800001 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.179666, 49.695589 ] } },
+{ "type": "Feature", "properties": { "description": "immature fruit" }, "geometry": { "type": "Point", "coordinates": [ -123.165107, 49.695129 ] } },
+{ "type": "Feature", "properties": { "description": "mature fruit" }, "geometry": { "type": "Point", "coordinates": [ -123.165107, 49.695129 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.164322, 49.695971 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.17511, 49.69647 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.17493, 49.69633 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.164662, 49.697094 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.164662, 49.697094 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.168666666700005, 49.707566666699996 ] } },
+{ "type": "Feature", "properties": { "description": "The half round shape of the stem in x-section is typical of the species. Here growing with Carex lyngbyei" }, "geometry": { "type": "Point", "coordinates": [ -123.163605, 49.696991666700001 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.168666666700005, 49.707397222200001 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.167153, 49.69528 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.093514972199998, 49.7392609722 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.179741666699996, 49.695446666700001 ] } },
+{ "type": "Feature", "properties": { "description": "Plantago macrocarpa-Juncus balticus has a red-listed community on BC CDC (an old record, so recorded as J. arcticus ssp\/var balticus). In the Squamish Estuary Juncus balticus is commonly associated with Plantago macrocarpa, but not necessrily as the two dominant species. They grow also with Triglochin maritimum, Carex lyngbyei and Potentilla egedii. In the Cesntral Delta this combination can be seen in a fairly continous line (ends pointing toward Squamish Chief and the yellow gate and bridge at S. end of Chelem Trail." }, "geometry": { "type": "Point", "coordinates": [ -123.17765, 49.694096666699998 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -122.935933, 50.99702 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.236326356800006, 49.551977573800002 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.167175, 49.704595 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.166161111099996, 49.698536111099997 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.165354352700007, 49.698422036799997 ] } },
+{ "type": "Feature", "properties": { "description": "Estuary" }, "geometry": { "type": "Point", "coordinates": [ -123.164086666700001, 49.691021666700003 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.1424504, 49.7159284 ] } },
+{ "type": "Feature", "properties": { "description": "I noticed just one plant in the meadow at the tip of the peninsula. Perhaps .8 m tall." }, "geometry": { "type": "Point", "coordinates": [ -123.14378055, 49.70423055 ] } }
+]
+}

@@ -1,0 +1,21 @@
+{
+"type": "FeatureCollection",
+"name": "Vaccinium oxycoccus",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.115491763099996, 50.038701841200002 ] } },
+{ "type": "Feature", "properties": { "description": "habitat: a bog" }, "geometry": { "type": "Point", "coordinates": [ -123.181584973200003, 49.626467892400001 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.125832783, 50.666195761099999 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -122.57823833, 50.56020833 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.158394444400002, 50.9117 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -122.814767109800002, 50.4907196578 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.178589852800002, 50.759120485700002 ] } },
+{ "type": "Feature", "properties": { "description": "Flowers terminal, bracts very small and closer to leaves than flower. First time I've found this species around Vancouver - all other Cranberries that I thought were Bog Cranberry actually turned out to be escaped V. macrocarpon growing in wild habitats." }, "geometry": { "type": "Point", "coordinates": [ -123.246955555599996, 49.5264972222 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.113688333300004, 49.769035 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.315655300399996, 50.536104486699998 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.124618145900001, 49.7905468935 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.366663733300001, 50.493951649099998 ] } },
+{ "type": "Feature", "properties": { "description": "A few of the fruit were light pink but most were white. This is only mid July so perhaps they have just formed." }, "geometry": { "type": "Point", "coordinates": [ -123.1241222222, 49.790783333299999 ] } },
+{ "type": "Feature", "properties": { "description": "Stump Lake, Alice Lake Provincial Park, Squamish Floating bogs around deadhead logs; thick mats of *Sphagnum*." }, "geometry": { "type": "Point", "coordinates": [ -123.123352687600004, 49.789144831 ] } }
+]
+}

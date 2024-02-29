@@ -1,0 +1,32 @@
+{
+"type": "FeatureCollection",
+"name": "Arbutus menziesii",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.23542, 49.558168 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.251945495599998, 49.506111145 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.241742178899997, 49.486607252699997 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.138039220400003, 49.7049631852 ] } },
+{ "type": "Feature", "properties": { "description": "It's extremely rare to see an Arbutus in Squamish. This is the largest I've ever seen here. on S facing slope amongst the granitic cliffs of the Smoke Bluffs" }, "geometry": { "type": "Point", "coordinates": [ -123.138095, 49.704826666700001 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.236077572499994, 49.556982956299997 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.238592071699998, 49.55140651 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.238632005, 49.551382785 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.015351879700006, 50.229327592600001 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.236113819300002, 49.555048671100003 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.234566666700005, 49.5590966667 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.248353199700006, 49.4842007 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.238605721699997, 49.55140467 ] } },
+{ "type": "Feature", "properties": { "description": "Porteau Cove Provincial Park, BC, Canada" }, "geometry": { "type": "Point", "coordinates": [ -123.238668333299998, 49.551366666699998 ] } },
+{ "type": "Feature", "properties": { "description": "Porteau Cove Provincial Park, BC, Canada" }, "geometry": { "type": "Point", "coordinates": [ -123.234466666700001, 49.559125 ] } },
+{ "type": "Feature", "properties": { "description": "Porteau Cove Provincial Park, BC, Canada" }, "geometry": { "type": "Point", "coordinates": [ -123.235825, 49.559416666700002 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.12208348599999, 49.705050370599999 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.235803333299998, 49.559546666700001 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.238422442300006, 49.551354562900002 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.238254963800003, 49.551271351799997 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.22336089, 49.58458047 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.235753742599996, 49.559428235 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.235855, 49.559555 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.232496666700001, 49.562078333300001 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.252021666700003, 49.50307 ] } }
+]
+}

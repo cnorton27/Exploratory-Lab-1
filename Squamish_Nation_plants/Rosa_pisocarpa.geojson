@@ -1,0 +1,19 @@
+{
+"type": "FeatureCollection",
+"name": "Rosa pisocarpa",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "description": "Family: Fabaceae Squamish habitat: Estuary Squamish location: East delta along old South Dyke Trail Notes: flowering Growing with: Oregon Crab Apple (Malus fusca), Cluster Rose (Rosa pisocarpa), Sitka spruce (Picea sitchensis)" }, "geometry": { "type": "Point", "coordinates": [ -123.165750503500007, 49.698322311200002 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.16887, 49.700268 ] } },
+{ "type": "Feature", "properties": { "description": "comparison of Rosa pisocarpa and R. nutkana fruit. The two plants were growing adjacent to each other." }, "geometry": { "type": "Point", "coordinates": [ -123.16887, 49.700268 ] } },
+{ "type": "Feature", "properties": { "description": "involucral bracts stalked glandular underside of leaflets short-hairy moist habitat of estuary" }, "geometry": { "type": "Point", "coordinates": [ -123.16305, 49.698116666700002 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.16519, 49.6957 ] } },
+{ "type": "Feature", "properties": { "description": "habitat very moist - out by Central Channel of Estuary. common sp in SW BC mature stems blackish (see last photo) calyces stalk-glandular" }, "geometry": { "type": "Point", "coordinates": [ -123.168978333300004, 49.6987816667 ] } },
+{ "type": "Feature", "properties": { "description": "There is a small wetland between the Community garden and Mamquam Rd. Today I noticed various rose plants, with this the only one in bloom in this very slow spring. There is a small group of these plants that seem to fit the characteristics of R. pisocarpa. Oval leaflets, pairs of straight prickles at leaf bases, clusters of flowers. Photo 13812 (eFlora BC) by Adolf Ceska shows the same red stems and stalks sometimes described for this species." }, "geometry": { "type": "Point", "coordinates": [ -123.13412, 49.734962 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.236896, 49.559646 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.236703333299999, 49.55242 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.169058333300001, 49.698853333300001 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.225678001399999, 49.5841234066 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.145538888900006, 49.700888888900003 ] } }
+]
+}

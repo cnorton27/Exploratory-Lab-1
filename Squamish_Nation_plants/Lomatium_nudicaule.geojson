@@ -1,0 +1,20 @@
+{
+"type": "FeatureCollection",
+"name": "Lomatium nudicaule",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -122.968582941700006, 50.576338858299998 ] } },
+{ "type": "Feature", "properties": { "description": "- 40mm long leaf - 45 petiole - 150mm tall - Infl 10mm across - 8 flower heads - 50mm pedicel." }, "geometry": { "type": "Point", "coordinates": [ -123.002686448600002, 50.579260647300003 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -122.874643010300005, 50.504223893499997 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.246405555600006, 50.851158333299999 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.089327777799994, 51.1142194444 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -122.978689752299999, 50.985180348100002 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -122.78495, 50.33083333 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -122.737778083500004, 50.316672094499999 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -123.031830555599996, 51.001694444400002 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -122.980605555599993, 50.990086111099998 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -122.979095973100002, 51.016915118500002 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -122.714332044200006, 50.359148578599999 ] } },
+{ "type": "Feature", "properties": { "description": null }, "geometry": { "type": "Point", "coordinates": [ -122.811873927700006, 50.293572314499997 ] } }
+]
+}
