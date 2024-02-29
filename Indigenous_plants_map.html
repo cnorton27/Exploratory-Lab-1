@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Map of GIS Club</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+    </style>
+
+
+</head>
+
+
+<body>
+    <div>
+        <h1> UBC GIS Club</h1>
+    </div>
+
+
+    <div id='map' style='width: 1000px; height: 800px;'></div>
+    <!-- feel free to play around with the map size by changing pixels-->
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoibm9ydG9uMjciLCJhIjoiY2xoam9hNHI5MGpuMjNscWtlcTF2dTN3dyJ9.xx0qCx-woV7mYFkrMNQmiA';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/norton27/clnl3x5ph00lu01q1emfi4hjx', //insert style here, here are some pre-set options https://docs.mapbox.com/api/maps/styles/
+            center: [-123.21224931916706, 49.26029799208978,], //insert coordinates here
+            zoom: 12, 
+            pitch: 80,
+            bearing: 41
+        });
+
+
+        map.addControl(new mapboxgl.NavigationControl());
+
+        // Add a scale control to the map
+        map.addControl(new mapboxgl.ScaleControl());
+
+        map.on('style.load', () => {
+            map.addSource('mapbox-dem', {
+                'type': 'raster-dem',
+                'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+                'tileSize': 512,
+                'maxzoom': 14
+            });
+            // add the DEM source as a terrain layer with exaggerated height
+            map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
+        });
+
+    </script>
+</body>
+
+</html>
