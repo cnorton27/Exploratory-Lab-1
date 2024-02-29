@@ -2,16 +2,6 @@
     "type": "FeatureCollection",
     "features": [
         {
-            "id": "5ca71dcffa9467840feb51284cecfca5",
-            "type": "Feature",
-            "properties": {
-                "Name": "Taribelang Bunda",
-                "ID": 39506,
-                "Slug": "taribelang-bunda",
-                "description": "https:\/\/native-land.ca\/maps\/territories\/taribelang-bunda\/",
-                "color": "#0e1b82"
-            },
-{
             "id": "ae78cb7a9ec561da716dd8efc2589cb4",
             "type": "Feature",
             "properties": {
@@ -465,5 +455,5 @@
                 "type": "Polygon"
             }
         }
-    }
+    ]
 }
