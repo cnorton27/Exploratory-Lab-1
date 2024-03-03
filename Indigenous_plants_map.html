@@ -22,6 +22,17 @@
             bottom: 0;
             width: 100%;
         }
+
+        .boxdraw {
+        background: rgba(56, 135, 190, 0.1);
+        border: 2px solid #3887be;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+    }
+
     </style>
 
 
@@ -116,23 +127,36 @@ map.on('load', () => {
     // }
     map.addSource('output-dilyyk', {
             'type': 'vector',
-            'url': 'mapbox://norton27.6c6knwb0'
+            'url': 'mapbox://norton27.6c6knwb0' 
         });
 
         map.addLayer(
             {
-                'id': 'highlighted-plants',
-                'type': 'fill',
+                'id': 'plants',
+                'type': 'circle',
                 'source': 'output-dilyyk',
                 'source-layer': 'original',
                 'paint': {
-                    'fill-outline-color': 'rgba(0,0,0,0.1)',
-                    'fill-color': 'rgba(0,0,0,0.1)'
+                    'fill-outline-color': '#484896',
+                    'fill-color': '#484896'
                 }
             },
-            // Place polygons under labels, roads and buildings.
-            'building'
         );
+
+        map.addLayer(
+            {
+                'id': 'highlighted-plants',
+                'type': 'circle',
+                'source': 'output-dilyyk',
+                'source-layer': 'original',
+                'paint': {
+                    'fill-outline-color': '#484896',
+                    'fill-color': '#484896'
+                }
+            },
+        );
+    
+
 
     // Set `true` to dispatch the event before other functions
     // call it. This is necessary for disabling the default map
@@ -221,8 +245,8 @@ map.on('load', () => {
             // Run through the selected features and set a filter
             // to match features with unique FIPS codes to activate
             // the `counties-highlighted` layer.
-            const fips = features.map((feature) => feature.properties.FIPS);
-            map.setFilter('highlighted-plants', ['in', 'FIPS', ...fips]);
+            const coords = features.map((feature) => feature.properties.coordinates);
+            map.setFilter('highlighted-plants', ['in', 'coordinates', ...coords]);
         }
 
         map.dragPan.enable();
