@@ -35,7 +35,7 @@ combined_gdf = gpd.GeoDataFrame(pd.concat(gdfs, ignore_index=True))
 print(combined_gdf.head())
 
 # Specify the output GeoJSON file path
-output_geojson_file = 'output.geojson'
+output_geojson_file = 'output_noroads.geojson'
 
 # Export GeoDataFrame to GeoJSON
 combined_gdf.to_file(output_geojson_file, driver='GeoJSON')
