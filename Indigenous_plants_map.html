@@ -88,6 +88,15 @@
             color: white;
             /* White text on hover */
         }
+
+        .mapboxgl-popup {
+        max-width: 400px;
+        font:
+            12px/20px 'Helvetica Neue',
+            Arial,
+            Helvetica,
+            sans-serif;
+    }
     </style>
 
 
@@ -119,7 +128,7 @@
         }
 
 
-        ////// map 
+        ////// map ///////////
         mapboxgl.accessToken = 'pk.eyJ1Ijoibm9ydG9uMjciLCJhIjoiY2xoam9hNHI5MGpuMjNscWtlcTF2dTN3dyJ9.xx0qCx-woV7mYFkrMNQmiA';
         const map = new mapboxgl.Map({
             container: 'map',
@@ -144,24 +153,8 @@
             });
             // add the DEM source as a terrain layer with exaggerated height
             map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
-
         });
-        map.on('click', (event) => {
-            const features = map.queryRenderedFeatures(event.point, {
-                layers: ['output-dilyyk']
-            });
-            if (!features.length) {
-                return;
-            }
-            const feature = features[0];
 
-            const popup = new mapboxgl.Popup({ offset: [0, -15] })
-                .setLngLat(feature.geometry.coordinates)
-                .setHTML(
-                    `<h3>${feature.properties.feature_collection_name}</h3><p>${feature.properties.description}</p>`
-                )
-                .addTo(map);
-        });
 
         //////////////////////////// Bounding Box Query ///////////////////////////////////////
 
@@ -169,9 +162,6 @@
         map.boxZoom.disable();
 
         // Create a popup, but don't add it to the map yet.
-        const popup = new mapboxgl.Popup({
-            closeButton: false
-        });
 
         map.on('load', () => {
             const canvas = map.getCanvasContainer();
@@ -209,11 +199,11 @@
                 type: 'circle',
                 source: 'plants_data',
                 paint: {
-                    'circle-color': '#11b4da',
-                    'circle-radius': 4,
-                    'circle-stroke-width': 1,
+                    'circle-color': '#cefad0',
+                    'circle-radius': 5,
+                    'circle-stroke-width': .3,
                     'circle-stroke-color': '#fff',
-                    'circle-opacity': 0.9
+                    'circle-opacity': 1
                 },
                 'filter': ['in', 'FIPS', '']
             });
@@ -296,18 +286,18 @@
 
                 // If bbox exists. use this value as the argument for `queryRenderedFeatures`
                 if (bbox) {
-                    const features2 = map.queryRenderedFeatures(bbox, {
+                    const features = map.queryRenderedFeatures(bbox, {
                         layers: ['squam-plants']
                     });
 
-                    if (features2.length >= 10000) {
+                    if (features.length >= 10000) {
                         return window.alert('Select a smaller number of features');
                     }
 
                     // Run through the selected features and set a filter
                     // to match features with unique FIPS codes to activate
-                    // the `counties-highlighted` layer.
-                    const coords = features2.map((feature) => feature.properties.ID);
+                    // the `plants-highlighted` layer.
+                    const coords = features.map((feature) => feature.properties.ID);
                     map.setFilter('highlighted-plants', ['in', 'ID', ...coords]);
                 }
 
@@ -315,24 +305,124 @@
             }
 
             map.on('mousemove', (e) => {
-                const features2 = map.queryRenderedFeatures(e.point, {
-                    layers: ['highlighted-plants']
-                });
+            const features = map.queryRenderedFeatures(e.point, {
+                layers: ['highlighted-plants']
+            });
 
-                // Change the cursor style as a UI indicator.
-                map.getCanvas().style.cursor = features2.length ? 'pointer' : '';
+            // Change the cursor style as a UI indicator.
+            map.getCanvas().style.cursor = features.length ? 'pointer' : '';
 
-                if (!features2.length) {
-                    popup.remove();
-                    return;
-                }
 
-                popup
-                    .setLngLat(e.lngLat)
-                    .setText(features2[0].properties.feature_collection_name)
-                    .addTo(map);
             });
         });
+
+
+        map.on('click', 'squam-plants', (e) => {
+            // Copy coordinates array.
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const description = e.features[0].properties.feature_collection_name;
+
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            new mapboxgl.Popup()
+                .setLngLat(coordinates)
+                .setText(description)
+                .addTo(map);
+        });
+
+
+
+        ////////////////search similar features/////////////////
+
+
+        const overlay = document.getElementById('map-overlay');
+
+        // Create a popup, but don't add it to the map yet.
+        const popup3 = new mapboxgl.Popup({
+            closeButton: false
+        });
+
+        // Because features come from tiled vector data,
+        // feature geometries may be split
+        // or duplicated across tile boundaries.
+        // As a result, features may appear
+        // multiple times in query results.
+        function getUniqueFeatures(features, comparatorProperty) {
+            const uniqueIds = new Set();
+            const uniqueFeatures = [];
+            for (const feature of features) {
+                const id = feature.properties[comparatorProperty];
+                if (!uniqueIds.has(id)) {
+                    uniqueIds.add(id);
+                    uniqueFeatures.push(feature);
+                }
+            }
+            return uniqueFeatures;
+        }
+
+
+            map.on('mousemove', 'squam-plants', (e) => {
+                // Change the cursor style as a UI indicator.
+                map.getCanvas().style.cursor = 'pointer';
+
+                // Use the first found feature.
+                const feature = e.features[0];
+
+                // Query the plants layer visible in the map.
+                // Only onscreen features are returned.
+                // Use filter to collect only results
+                // with the same county name.
+                const relatedplants = map.querySourceFeatures('squam-plants', {
+                    sourceLayer: 'original',
+                    filter: ['in', 'feature_collection_name', feature.properties.feature_collection_name]
+                });
+
+
+
+                // Remove duplicates by checking for matching FIPS county ID.
+                const uniqueplants = getUniqueFeatures(relatedplants, 'ID');
+
+
+                // Render found features in an overlay.
+                const title = document.createElement('strong');
+                title.textContent =
+                    feature.properties.feature_collection_name+
+                    ' (' +
+                    uniqueplants.length +
+                    ' found)';
+
+                overlay.innerHTML = '';
+                overlay.style.display = 'block';
+
+                overlay.appendChild(title);
+
+                // Add features with the same county name
+                // to the highlighted layer.
+                map.setFilter('highlighted-plants', [
+                    'in',
+                    'feature_collection_name',
+                    feature.properties.feature_collection_name
+                ]);
+
+                // Display a popup with the name of the county.
+                popup3
+                    .setLngLat(e.lngLat)
+                    .setText(feature.properties.feature_collection_name)
+                    .addTo(map);
+            });
+
+            map.on('mouseleave', 'squam-plants', () => {
+                map.getCanvas().style.cursor = '';
+                popup3.remove();
+                map.setFilter('highlighted-plants', ['in', 'feature_collection_name', '']);
+                overlay.style.display = 'none';
+            });
+
 
 
     </script>
