@@ -97,6 +97,24 @@
                 Helvetica,
                 sans-serif;
         }
+
+        .map-overlay {
+        font:
+            12px/20px 'Helvetica Neue',
+            Arial,
+            Helvetica,
+            sans-serif;
+        background-color: #fff;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+        position: absolute;
+        width: 25%;
+        top: 10px;
+        left: 10px;
+        padding: 10px;
+        display: none;
+    }
+
     </style>
 
 
@@ -106,14 +124,17 @@
 <body>
 
     <div id='map'></div>
-
+    
 
     <div id="popup" class="popup">
         <span class="close" onclick="togglePopup()">&times;</span>
-        <img id="popupImg" src="popup_intro-02.png" alt="Popup Image">
+        <img id="popupImg" src="popup_intro.png" alt="Popup Image">
     </div>
 
     <button class="button" onclick="togglePopup()">Toggle Image</button>
+    
+    <div id="map-overlay" class="map-overlay"></div>
+
 
     <script>
 
@@ -338,7 +359,7 @@
 
 
 
-        ////////////////search similar features/////////////////
+        ////////////////search similar features/////////////////////////////////////////////////////////////////////////
 
         map.addLayer({
                 id: 'same_plants',
@@ -392,6 +413,7 @@
             // Only onscreen features are returned.
             // Use filter to collect only results
             // with the same county name.
+
             const relatedplants = map.querySourceFeatures('squam-plants', {
                 sourceLayer: 'original',
                 filter: ['in', 'feature_collection_name', feature.properties.feature_collection_name]
@@ -407,7 +429,7 @@
             title.textContent =
                 feature.properties.feature_collection_name +
                 ' (' +
-                relatedplants.length +
+                uniqueplants.length +
                 ' found)';
 
             const ID = document.createElement('div');
@@ -435,6 +457,7 @@
                 .setText(feature.properties.feature_collection_name)
                 .addTo(map);
         });
+        
 
         map.on('mouseleave', 'squam-plants', () => {
             map.getCanvas().style.cursor = '';
