@@ -313,6 +313,78 @@ map.on('load', () => {
 });
 
 
+                   /////////////////adding buffer//////////////////////////
+
+
+                   map.addSource('trails', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/cnorton27/Exploratory-Lab-1/main/LineStrings.geojson' // Replace with the URL of your GeoJSON data
+});
+
+const buffered = turf.buffer(trails, 0.05, { units: 'miles' });
+
+map.addLayer({
+    id: 'trailss',
+    type: 'line',
+    source: 'trails',
+    layout: {
+        'line-cap': 'round',
+        'line-join': 'round'
+    },
+    paint: {
+        'line-color': '#FF0000',
+        'line-width': 5
+    }
+
+});
+
+
+//////////////////////////////buffer/////////////////////
+
+
+map.on('click', (event) => {
+    // Return any features from the 'libraries' layer whenever the map is clicked
+    const selectedTrail = map.queryRenderedFeatures(event.point, {
+        layers: ['trails']
+    });
+    if (!selectedTrail.length) {
+        return;
+    }
+    const trailFeature = selectedTrail[0];
+
+    const buffered = turf.buffer(trails, 0.05, { units: 'miles' });
+
+    map.addSource('buffered-trail', {
+        type: 'geojson',
+        data: {
+            type: 'FeatureCollection',
+            features: []
+        }
+    });
+
+    map.getSource('buffered-trail').setData({
+        type: 'FeatureCollection',
+        features: [buffered]
+    });
+
+    // Create a new circle layer from the 'nearest-library' data source
+    if (map.getLayer('buffered-trail')) {
+        map.removeLayer('buffered-trail');
+    }
+    map.addLayer(
+        {
+            id: 'buffered-trail',
+            type: 'fill',
+            source: 'buffered-trail',
+            'paint': {
+                'fill-color': '#0080ff', // blue color fill
+                'fill-opacity': 0.5
+            }
+        },
+    );
+});
+
+
     </script>
 </body>
 
