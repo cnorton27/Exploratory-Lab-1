@@ -179,6 +179,9 @@
         });
 
 
+
+
+
         //////////////////////////// Bounding Box Query ///////////////////////////////////////
 
         // Disable default box zooming.
@@ -187,7 +190,7 @@
         // Create a popup, but don't add it to the map yet.
 
         map.on('load', () => {
-            
+
 
             const canvas = map.getCanvasContainer();
 
@@ -379,6 +382,7 @@
 
 
 
+
         ////////////////search similar features/////////////////////////////////////////////////////////////////////////
 
 
@@ -429,6 +433,10 @@
             // Remove duplicates by checking for matching FIPS county ID.
             const uniqueplants = getUniqueFeatures(relatedplants, 'ID');
 
+            // Count the number of features with the property "type" equal to "tree"
+            var counter = countFeaturesWithPropertyValue(plants_data, "feature_collection_name", feature2);
+
+
 
             // Render found features in an overlay.
             const title = document.createElement('strong');
@@ -473,7 +481,7 @@
             overlay.style.display = 'none';
         });
 
- 
+
 
     </script>
 </body>
