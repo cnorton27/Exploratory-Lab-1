@@ -359,7 +359,7 @@
 
 
         ////////////////search similar features through mouse-over/////////////////////////////////////////////////////////////////////////
-                // not functional, needs debugging
+        // not functional, needs debugging
 
 
         const overlay = document.getElementById('map-overlay');
@@ -396,6 +396,23 @@
 
             const uniqueplants = getUniqueFeatures(relatedplants, 'ID');
 
+
+            // Define the property you want to filter by
+            var filterProperty = 'property_name';
+            var filterValue = 'property_value';
+
+            // Parse GeoJSON data
+            var features = plants_.features;
+
+            // Filter and count features
+            var featureCount = features.filter(function (feature) {
+                return feature.properties[filterProperty] === filterValue;
+            }).length;
+
+
+
+
+
             const title = document.createElement('strong');
             title.textContent =
                 feature2.properties.feature_collection_name +
@@ -411,7 +428,7 @@
             overlay.style.display = 'block';
 
             overlay.appendChild(title);
-            overlay.appendChild(ID);
+            overlay.appendChild(population);
 
 
             // Add features with the same county name
