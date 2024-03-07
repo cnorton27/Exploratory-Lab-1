@@ -151,7 +151,7 @@
         }
 
 
-        ////// map ///////////
+        ////// map /////////////////////////////////////////////////////////////
         mapboxgl.accessToken = 'pk.eyJ1Ijoibm9ydG9uMjciLCJhIjoiY2xoam9hNHI5MGpuMjNscWtlcTF2dTN3dyJ9.xx0qCx-woV7mYFkrMNQmiA';
         const map = new mapboxgl.Map({
             container: 'map',
@@ -179,9 +179,6 @@
         });
 
 
-
-
-
         //////////////////////////// Bounding Box Query ///////////////////////////////////////
 
         // Disable default box zooming.
@@ -194,15 +191,8 @@
 
             const canvas = map.getCanvasContainer();
 
-            // Variable to hold the starting xy coordinates
-            // when `mousedown` occured.
             let start;
-
-            // Variable to hold the current xy coordinates
-            // when `mousemove` or `mouseup` occurs.
             let current;
-
-            // Variable for the draw box element.
             let box;
 
             map.addSource('plants_data', {
@@ -251,10 +241,6 @@
                 'filter': ['in', 'ID', '']
             });
 
-
-            // Set `true` to dispatch the event before other functions
-            // call it. This is necessary for disabling the default map
-            // dragging behaviour.
             canvas.addEventListener('mousedown', mouseDown, true);
 
             // Return the xy coordinates of the mouse position
@@ -326,7 +312,6 @@
                     box = null;
                 }
 
-                // If bbox exists. use this value as the argument for `queryRenderedFeatures`
                 if (bbox) {
                     const features = map.queryRenderedFeatures(bbox, {
                         layers: ['squam-plants']
@@ -336,9 +321,7 @@
                         return window.alert('Select a smaller number of features');
                     }
 
-                    // Run through the selected features and set a filter
-                    // to match features with unique FIPS codes to activate
-                    // the `plants-highlighted` layer.
+                    // set filter for highlighted plants layer, uses ID property to ensure no duplicates
                     const coords = features.map((feature) => feature.properties.ID);
                     map.setFilter('highlighted-plants', ['in', 'ID', ...coords]);
                 }
@@ -346,26 +329,20 @@
                 map.dragPan.enable();
             }
 
+            //changes mouse to pointer
             map.on('mousemove', (e) => {
                 const features = map.queryRenderedFeatures(e.point, {
                     layers: ['highlighted-plants']
                 });
 
-                // Change the cursor style as a UI indicator.
-                //map.getCanvas().style.cursor = features.length ? 'pointer' : '';
-
-
             });
 
 
+            //popup ... might delete or change info to a picture of the plants from iNaturalist later
             map.on('click', 'squam-plants', (e) => {
-                // Copy coordinates array.
                 const coordinates = e.features[0].geometry.coordinates.slice();
                 const description = e.features[0].properties.feature_collection_name;
 
-                // Ensure that if the map is zoomed out such that multiple
-                // copies of the feature are visible, the popup appears
-                // over the copy being pointed to.
                 while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
                 }
@@ -381,9 +358,8 @@
 
 
 
-
-
-        ////////////////search similar features/////////////////////////////////////////////////////////////////////////
+        ////////////////search similar features through mouse-over/////////////////////////////////////////////////////////////////////////
+                // not functional, needs debugging
 
 
         const overlay = document.getElementById('map-overlay');
@@ -393,11 +369,7 @@
             closeButton: false
         });
 
-        // Because features come from tiled vector data,
-        // feature geometries may be split
-        // or duplicated across tile boundaries.
-        // As a result, features may appear
-        // multiple times in query results.
+        // function makes sure feature is not a duplicate caused by loading multiple map tiles at once
         function getUniqueFeatures(features, comparatorProperty) {
             const uniqueIds = new Set();
             const uniqueFeatures = [];
@@ -413,32 +385,17 @@
 
 
         map.on('mousemove', 'squam-plants', (e) => {
-            // Change the cursor style as a UI indicator.
-            //map.getCanvas().style.cursor = 'pointer';
 
-            // Use the first found feature.
+            // feature2 = plant that mouse is hovering over
             const feature2 = e.features[0];
-
-            // Query the plants layer visible in the map.
-            // Only onscreen features are returned.
-            // Use filter to collect only results
-            // with the same county name.
 
             const relatedplants = map.querySourceFeatures('squam-plants', {
                 sourceLayer: 'original',
                 filter: ['in', 'feature_collection_name', feature2.properties.feature_collection_name]
             });
 
-
-            // Remove duplicates by checking for matching FIPS county ID.
             const uniqueplants = getUniqueFeatures(relatedplants, 'ID');
 
-            // Count the number of features with the property "type" equal to "tree"
-            var counter = countFeaturesWithPropertyValue(plants_data, "feature_collection_name", feature2);
-
-
-
-            // Render found features in an overlay.
             const title = document.createElement('strong');
             title.textContent =
                 feature2.properties.feature_collection_name +
@@ -448,13 +405,13 @@
 
             const ID = document.createElement('div');
             ID.textContent =
-                'Total population:'
+                'Total plants:'
 
             overlay.innerHTML = '';
             overlay.style.display = 'block';
 
             overlay.appendChild(title);
-            overlay.appendChild(population);
+            overlay.appendChild(ID);
 
 
             // Add features with the same county name
